@@ -133,30 +133,9 @@ void loop() {
     Demo();
 }
 void Demo() {
-long i;
 
   Display.Clear_Window(0x00,0x83,0x00,0x83);
-  delay(10);
-  Display.SetColour(OLED_BLUE);
-  Display.printxy(100,80,"A");
-  delay(500);
-  while(1)
-  if (Serial)   {
-    char ch = Serial.read();
-    if (ch==-1) {
-        if (BuffPtr!=0) {
-            BuffPtr = 0;         
-            Display.DrawPath(Buff);
-        }
-        continue;
-    }
-delay(10);
-    Buff[BuffPtr++]=ch;
-    if(BuffPtr>200) BuffPtr=0;
-    Buff[BuffPtr]=0;    
-  }
 
-  return;
   draw_lines_flower1();
   delay(100);
   draw_lines_flower();
